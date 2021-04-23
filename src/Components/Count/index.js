@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.css'
 
 function index(props) {
     const myList = props.taskList
@@ -7,11 +8,11 @@ function index(props) {
         task.isChecked ? finishedTasks++ : remainingTasks++
     })
     return (
-        <div>
+        <div className='count'>
             {
                 remainingTasks 
                 ?
-                <div>
+                <div className='remTasks'>
                     <h4>Remaining Tasks: <strong>{remainingTasks}</strong></h4>
                 </div>
                 :
@@ -20,7 +21,7 @@ function index(props) {
             {
                 finishedTasks
                 ?
-                <div>
+                <div className='finTasks'>
                     <h4>Finished Tasks: <strong>{finishedTasks}</strong></h4>
                 </div>
                 :

@@ -1,0 +1,8 @@
+.count .finTasks{
+    color: darkgreen;
+}
+
+.count .remTasks {
+    color: crimson;
+    /* background: darkgrey; */
+}
