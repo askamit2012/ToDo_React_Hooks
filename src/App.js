@@ -48,7 +48,7 @@ function App() {
     setNewTaskVal(e.target.value)
   }
 
-  const handleModify = index => {
+  const handleModify = (index) => {
     if(newTaskVal){
       const myList = [...taskList]
       myList.splice(index,1)

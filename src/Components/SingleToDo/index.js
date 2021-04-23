@@ -1,11 +1,12 @@
 import React from 'react'
 import EtoDo from '../EditableToDo'
+import './index.css'
 
 function index(props) {
     const task = props.task
     const index = props.index
     return (
-        <div>
+        <div className='singleToDo'>
             {
                 task.isEditable
                 ?
@@ -18,18 +19,20 @@ function index(props) {
                 :
                 task.isChecked
                 ?
-                <div style={{textDecoration: 'line-through'}}>
-                    <input type='checkbox'  onChange={() => props.handleCB(index)} checked={task.isChecked}/>
+                <div style={{textDecoration: 'line-through'}} className='singleTask'>
+                    <input type='checkbox'  onChange={() => props.handleCB(index)} checked={task.isChecked} className='cb'/>
                     <span>{task.task}</span>
                     <button onClick={() => props.handleEdit(index)}>EDIT</button>
                     <button onClick={() => props.handleDEL(index)}>DEL</button>
                 </div>
                 :
                 <>
-                    <input type='checkbox'  onChange={() => props.handleCB(index)} checked={task.isChecked}/>
-                    <span>{task.task}</span>
-                    <button onClick={() => props.handleEdit(index)}>EDIT</button>
-                    <button onClick={() => props.handleDEL(index)}>DEL</button>
+                    <div className='singleTask'>
+                        <input type='checkbox'  onChange={() => props.handleCB(index)} checked={task.isChecked} className='cb'/>
+                        <span>{task.task}</span>
+                        <button onClick={() => props.handleEdit(index)}>EDIT</button>
+                        <button onClick={() => props.handleDEL(index)}>DEL</button>
+                    </div>
                 </>
             }
             

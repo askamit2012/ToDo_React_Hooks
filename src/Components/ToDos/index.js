@@ -4,7 +4,7 @@ import SingleToDo from '../SingleToDo'
 function index(props) {
     const taskList = props.taskList
     return (
-        <div>
+        <div style={{marginTop: '10px'}}>
             {
                 taskList.map((task,index) => <SingleToDo 
                 key={index}                                    
